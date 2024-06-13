@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de Tarefas</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+</head>
+<body>
+    <!-- Container principal -->
+    <div class="container py-4" style="border: 1px solid black; max-width: 600px; background-image: url(/todo-frontend/img/kebook_cover.jpg);">
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-light bg-light mb-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <!-- Ícone e título da página -->
+                    <img src="/todo-frontend/img/kebook.jpg" alt="Bootstrap" width="30" height="24" class="d-inline-block align-text-top">
+                    Lista de Tarefas
+                </a>
+            </div>
+        </nav>
+
+        <!-- Formulário de entrada de tarefa -->
+        <form id="task-form" class="mb-4">
+            <div class="input-group">
+                <!-- Campo de entrada para nova tarefa -->
+                <input type="text" id="task-input" class="form-control" placeholder="Digite uma nova tarefa..." required>
+                <!-- Botão para adicionar tarefa -->
+                <button type="submit" class="btn btn-primary"><i class="fas fa-plus"></i> Adicionar Tarefa</button>
+            </div>
+        </form>
+
+        <!-- Lista de Tarefas -->
+        <ul id="task-list" class="list-group"></ul>
+        <br>
+        <!-- Pesquisa por ID -->
+        <div class="input-group mb-4">
+            <!-- Campo de entrada para ID da tarefa -->
+            <input type="number" id="search-task-id" class="form-control" placeholder="Digite o ID da tarefa...">
+            <!-- Botão para pesquisa -->
+            <button id="search-task-button" class="btn btn-primary"><span class="material-symbols-outlined">
+                search
+                </span></button>
+        </div>
+    </div>
+
+    <!-- Modal de Detalhes da Tarefa -->
+    <div class="modal fade" id="taskModal" tabindex="-1" aria-labelledby="taskModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <!-- Título do modal -->
+                    <h5 class="modal-title" id="taskModalLabel">Detalhes da Tarefa</h5>
+                    <!-- Botão para fechar o modal -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Campos ocultos e visíveis para detalhes da tarefa -->
+                    <input type="hidden" id="task-id">
+                    <h5 id="task-title"></h5>
+                    <p id="task-description"></p>
+                    <div id="task-status"></div>
+                </div>
+                <div class="modal-footer">
+                    <!-- Botões para fechar, excluir, editar e alterar status da tarefa -->
+                    <button type="button" class="btn btn-danger" id="delete-task"><i class="fas fa-trash"></i> Excluir</button>
+                    <button type="button" class="btn btn-primary" id="edit-task"><i class="fas fa-edit"></i> Editar</button>
+                    <button type="button" class="btn btn-warning" id="toggle-status"><i class="fas fa-check"></i> Alterar Status</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS para funcionalidades dinâmicas -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome JS para ícones -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-0FV1HhFC/f7HRsA6rgXj4r7k9OXOeeAWCPEpA+79NSw6FBBGwNZnl9wMeqQO2M42In4rA5IBRDRDpBVL1X7R4g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Script personalizado para a lógica da aplicação -->
+    <script src="app.js"></script>
+</body>
+</html>
