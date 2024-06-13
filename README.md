@@ -62,4 +62,4 @@ node nome-do-arquivo.js
 
 Substitua `nome-do-arquivo.js` pelo nome do arquivo onde o código da API está implementado.
 
-A API estará disponível em `http://localhost:3000`.
+A API estará disponível em `http://localhost:3000`, mas voce não vai conseguir acessar poruqe é localmente.
